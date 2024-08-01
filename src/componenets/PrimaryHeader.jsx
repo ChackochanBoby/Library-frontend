@@ -2,7 +2,7 @@ import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 function PrimaryHeader() {
-  const login=useSelector(state=>state.login.loggedIn)
+  const login = useSelector((state) => state.login.loggedIn);
   return (
     <header className="shadow-lg shadow-gray-200">
       <nav className="2xl:container mx-auto px-6 py-6 flex flex-row justify-between items-center">
@@ -19,12 +19,20 @@ function PrimaryHeader() {
           <li>
             <Link to={"/authors"}>author</Link>
           </li>
-          {login?<li><Link to={"/logout"}>Log Out</Link></li>:<li>
-            <Link to={"/login"}>Login</Link>
-          </li>}
-          <li>
-            <Link to={"/Signup"}>Sign Up</Link>
-          </li>
+          {login ? (
+            <li>
+              <Link to={"/logout"}>Log Out</Link>
+            </li>
+          ) : (
+            <>
+              <li>
+                <Link to={"/login"}>Login</Link>
+              </li>
+              <li>
+                <Link to={"/Signup"}>Sign Up</Link>
+              </li>
+            </>
+          )}
         </ul>
       </nav>
     </header>
