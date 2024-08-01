@@ -2,8 +2,10 @@ import axios from "axios";
 import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
 import { changeLoginState } from "../features/login/loginSlice";
+import { useNavigate } from "react-router-dom";
 
 export default function LoginPage() {
+  const navigate=useNavigate()
   const {
     register,
     handleSubmit,
@@ -15,6 +17,7 @@ export default function LoginPage() {
       .post(`${import.meta.env.VITE_API_BASE_URL}/auth`, data, { withCredentials: true })
       .then(() => {
         dispatch(changeLoginState(true));
+        navigate(-1)
       })
       .catch((Response) => console.log(Response.error));
   };

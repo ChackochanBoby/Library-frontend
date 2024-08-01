@@ -3,7 +3,7 @@ import BookCard from "../componenets/BookCard";
 function HomePage() {
   const {featuredBooks}=useLoaderData()
   return (
-    <main>
+    <main className="2xl:container mx-auto p-6">
       <section className="text-center mb-12">
         <h2 className="text-2xl font-semibold mb-4">Discover a World of Books</h2>
         <p className="text-lg">
