@@ -17,6 +17,7 @@ import { Provider } from "react-redux";
 import {loader as authorLoader} from "./loaders/authorLoader"
 import AuthorDetailsPage from "./routes/AuthorDetailsPage";
 import {loader as authorDetailLoader} from "./loaders/authorDetailLoader"
+import {loader as homeLoader} from "./loaders/homeLoader"
 
 const router = createBrowserRouter([
   {
@@ -27,6 +28,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <HomePage />,
+        loader: homeLoader
       },
       {
         path: "/books",
