@@ -1,4 +1,7 @@
+import { useLoaderData } from "react-router-dom";
+import BookCard from "../componenets/BookCard";
 function HomePage() {
+  const {featuredBooks}=useLoaderData()
   return (
     <main>
       <section className="text-center mb-12">
@@ -9,11 +12,11 @@ function HomePage() {
       </section>
       <section className="mb-12">
         <h2 className="text-2xl font-semibold mb-4 text-center">Featured Books</h2>
-        {/* <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {
             featuredBooks.map((book)=><BookCard key={book._id} id={book._id} title={book.title} author={book.author} image={book.image}/>)
           }
-        </div> */}
+        </div>
       </section>
       {/* {
         login===false?<CallToAction/>:null
